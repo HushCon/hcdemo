@@ -75,7 +75,6 @@ static void print_letter(char letter, int scale)
         mvprintw(mid_r + r, mid_c + c,
                  "%c", letters[LETTER(letter)][r/scale][c/scale]);
     refresh();
-    return;
 }
 
 static void disp_letters(void)
