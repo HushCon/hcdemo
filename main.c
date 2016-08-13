@@ -91,17 +91,14 @@ static void disp_letters(void)
 int main(void)
 {
     int i;
+    static void (*fns[])(void) = {stream, disp_letters, randfill};
+    static int n_fns = sizeof(fns) / sizeof(fns[0]);
 
     init_screen();
 
     /* Not infinite */
-    for (i=0; i<(unsigned)~0; ++i) {
-        switch (rand() % 4) {
-            case 0: stream(); break;
-            case 1: disp_letters(); break;
-            case 2: randfill(); break;
-        }
-    }
+    for (i=0; i<(unsigned)~0; ++i)
+        fns[rand() % n_fns]();
 
     endwin();
     return 0; 
