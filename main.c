@@ -90,8 +90,8 @@ static void disp_letters(void)
 int main(void)
 {
     int i;
-    static void (*fns[])(void) = {stream, disp_letters, randfill};
-    static int n_fns = sizeof(fns) / sizeof(fns[0]);
+    void (*fns[])(void) = {stream, disp_letters, randfill};
+    const int n_fns = sizeof(fns) / sizeof(fns[0]);
 
     init_screen();
 
