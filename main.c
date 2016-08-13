@@ -1,15 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <signal.h>
 #include <unistd.h>
 #include <ncurses.h>
 #include "letters.h"
-
-static void handler(int signo)
-{
-    /* Huh huh --Butthead */
-}
 
 static void init_screen(void)
 {
@@ -98,7 +92,6 @@ int main(void)
 {
     int i;
 
-    signal(SIGINT, handler);
     init_screen();
 
     /* Not infinite */
